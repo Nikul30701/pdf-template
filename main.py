@@ -13,7 +13,10 @@ for index, row in df.iterrows():
     pdf.set_text_color(0,0,260)
     pdf.cell(w=0,h=12, txt = row["Topic"], align="L",
          ln=1)
-    pdf.line(10,22,200,22)
+    for y in range(20,298,10):
+        pdf.line(20,y,200,y)
+
+
 
     # Set the footer
     pdf.ln(265)
@@ -27,6 +30,8 @@ for index, row in df.iterrows():
         pdf.add_page()
         # Set the footer
         pdf.ln(275)
+        for y in range(20, 298, 10):
+            pdf.line(20, y, 200, y)
 
         pdf.set_font(family="Times", style="IB", size=8)
         pdf.set_text_color(180, 100, 180)
